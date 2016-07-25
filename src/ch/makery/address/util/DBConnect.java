@@ -2,10 +2,6 @@ package ch.makery.address.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-/**
- *
- * @author Narayan
- */
 
 public class DBConnect {
 
@@ -20,8 +16,7 @@ public class DBConnect {
     public static Connection connect() throws SQLException{
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-//            Connection con=DriverManager.getConnection(
-//                    "jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+
         }catch(ClassNotFoundException cnfe){
             System.err.println("Error: "+cnfe.getMessage());
         }catch(InstantiationException ie){
@@ -29,7 +24,6 @@ public class DBConnect {
         }catch(IllegalAccessException iae){
             System.err.println("Error: "+iae.getMessage());
         }
-
         conn = DriverManager.getConnection(url,user,pass);
         return conn;
     }
@@ -41,3 +35,5 @@ public class DBConnect {
 
     }
 }
+//            Connection con=DriverManager.getConnection(
+//                    "jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
