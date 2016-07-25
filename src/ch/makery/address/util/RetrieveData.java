@@ -1,6 +1,5 @@
 package ch.makery.address.util;
 
-import ch.makery.address.DBConnect;
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Ticket;
 import javafx.collections.FXCollections;
@@ -20,7 +19,6 @@ public class RetrieveData {
         try {
             Connection c;
             c = DBConnect.connect();
-            //String SQL = "SELECT FIRST_NAME, LAST_NAME FROM  Persons";
             ResultSet rs = c.createStatement().executeQuery(SQL);
 
             while (rs.next()) {

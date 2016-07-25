@@ -1,19 +1,14 @@
 package ch.makery.address.view;
 import java.io.File;
-import java.io.IOException;
 import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
-import ch.makery.address.DBConnect;
+import ch.makery.address.util.DBConnect;
 import ch.makery.address.model.Ticket;
 import ch.makery.address.util.AlertMsg;
-import ch.makery.address.util.DateUtil;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
