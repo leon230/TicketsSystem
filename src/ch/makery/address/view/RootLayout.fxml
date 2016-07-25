@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1200.0" stylesheets="@Light.css" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleNewTicket" text="New" />
+                  <MenuItem mnemonicParsing="false" text="File Copy" />
+                  <!--<MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open" />-->
+                  <!--<MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />-->
+                  <!--<MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save As..." />-->
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="ANY" code="X" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" onAction="#handleAbout" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Statistics">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleShowTicketStatistics" text="Show statistics" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Filter">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Ticket number">
+                     <graphic>
+                        <TextField fx:id="ticketNoFilter" onAction="#updateFilteredData" promptText="Enter ticket number" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="ticketTable" editable="true" maxWidth="1.7976931348623157E308" prefHeight="484.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="ticketIDColumn" minWidth="100.0" prefWidth="50.0" text="Ticket ID" />
+            <TableColumn fx:id="ticketClusterCol" minWidth="100.0" prefWidth="50.0" text="Cluster" />
+            <TableColumn fx:id="ticketNOColumn" minWidth="100.0" prefWidth="120.0" text="Ticket number" />
+            <TableColumn fx:id="ticketTitleColumn" minWidth="100.0" prefWidth="100.0" text="Ticket title" />
+            <TableColumn fx:id="ticketDescCol" minWidth="100.0" prefWidth="500.0" text="Description" />
+            <TableColumn fx:id="ticketPriorityCol" minWidth="100.0" prefWidth="100.0" text="Priority" />
+            <TableColumn fx:id="ticketOwnerColumn" minWidth="100.0" prefWidth="100.0" text="Ticket owner" />
+            <TableColumn fx:id="ticketStatusCol" minWidth="100.0" prefWidth="100.0" text="Status" />
+            <TableColumn fx:id="ticketOpenDColumn" minWidth="100.0" prefWidth="100.0" text="Open date" />
+            <TableColumn fx:id="ticketCloseDColumn" minWidth="100.0" prefWidth="100.0" text="Close date" />
+            <TableColumn fx:id="ticketRepByCol" minWidth="100.0" prefWidth="100.0" text="Reported by" />
+            <TableColumn fx:id="ticketAccOwnerDCol" minWidth="100.0" prefWidth="100.0" text="Accenture Owner" />
+            <TableColumn fx:id="ticketImpactAllCol" minWidth="100.0" prefWidth="100.0" text="Impact All" />
+            <TableColumn fx:id="ticketImpactOpsCol" minWidth="100.0" prefWidth="100.0" text="Impact Ops" />
+            <TableColumn fx:id="ticketImpactORCol" minWidth="100.0" prefWidth="100.0" text="Impact OR" />
+            <TableColumn fx:id="ticketImpactTspCol" minWidth="100.0" prefWidth="100.0" text="Impact TSP" />
+            <TableColumn fx:id="ticketImpactEBSCol" minWidth="100.0" prefWidth="100.0" text="Impact EBs" />
+            <TableColumn fx:id="ticketImpactSAPCol" minWidth="100.0" prefWidth="100.0" text="Impact SAP" />
+            <TableColumn fx:id="ticketImpactDBCol" minWidth="100.0" prefWidth="100.0" text="Impact DB" />
+            <TableColumn fx:id="ticketImpactXDCol" minWidth="100.0" prefWidth="100.0" text="Impact XD" />
+            <TableColumn fx:id="ticketImpactFinCol" minWidth="100.0" prefWidth="100.0" text="Impact Finance" />
+            <TableColumn fx:id="ticketInsDateCol" minWidth="100.0" prefWidth="100.0" text="Insert date" />
+            <TableColumn fx:id="ticketInsUserCol" minWidth="100.0" prefWidth="100.0" text="Insert user" />
+
+
+
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleEditPerson" text="Edit" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <bottom>
+      <Label fx:id="statusLabel" text="Status" BorderPane.alignment="TOP_LEFT" />
+   </bottom>
+</BorderPane>
