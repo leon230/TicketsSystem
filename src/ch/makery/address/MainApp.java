@@ -231,9 +231,6 @@ public class MainApp extends Application {
         }
     }
     /**
-     * Loads person data from the specified file. The current person data will
-     * be replaced.
-     *
      * @param file
      */
     public void loadPersonDataFromFile(File file) {
